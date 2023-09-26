@@ -5,9 +5,9 @@ export default function Footer() {
     <footer className="bg-white shadow dark:bg-gray-200 mt-6">
       <div className="container mx-auto">
         <div className="flex flex-col ">
-          <p className="w-full text-center">FORMULAR</p>
+          <p className="w-full text-center my-8 font-bold">FORMULAR</p>
           <form className="w-full flex flex-wrap gap-4 justify-between">
-            <div className="w-[24%]">
+            <div className="px-4 w-full max-w-[100%] sm:max-w-[45%] lg:max-w-[23%]">
               <label htmlFor="fname">*First name:</label>
               <br />
               <input
@@ -17,7 +17,7 @@ export default function Footer() {
                 className="rounded-lg p-2 w-full"
               />
             </div>
-            <div className="w-[24%]">
+            <div className="px-4 w-full max-w-[100%] sm:max-w-[45%] lg:max-w-[23%]">
               <label htmlFor="fname">*First name:</label>
               <br />
               <input
@@ -27,7 +27,7 @@ export default function Footer() {
                 className="rounded-lg p-2 w-full"
               />
             </div>
-            <div className="w-[24%]">
+            <div className="px-4 w-full max-w-[100%] sm:max-w-[45%] lg:max-w-[23%]">
               <label htmlFor="fname">*First name:</label>
               <br />
               <input
@@ -37,7 +37,7 @@ export default function Footer() {
                 className="rounded-lg p-2 w-full"
               />
             </div>
-            <div className="w-[24%]">
+            <div className="px-4 w-full max-w-[100%] sm:max-w-[45%] lg:max-w-[23%]">
               <label htmlFor="fname">*First name:</label>
               <br />
               <input
@@ -48,7 +48,7 @@ export default function Footer() {
               />
             </div>
 
-            <div className="w-full">
+            <div className="w-full px-4">
               <label htmlFor="text">*Your message:</label>
               <br />
               <textarea

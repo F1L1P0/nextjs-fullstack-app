@@ -7,7 +7,7 @@ import img4 from '@/public/sliderImages/4.jpg'
 import './slider.css'
 import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 
 export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0)
