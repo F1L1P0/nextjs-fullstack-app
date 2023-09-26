@@ -6,12 +6,13 @@ import './cardNav.css'
 export default function CardNav() {
   return (
     <section className="container mx-auto">
-      <div className="grid grid-cols-12">
-        <div className="flex col-span-4 m-4 card-shadow text-center justify-center aspect-square items-center rounded-3xl hover:scale-105 ease-in-out transition-all duration-300">
+      <div className="grid grid-cols-12 max-w-[768px] mx-auto place-items-center">
+        <div className="flex col-span-12 sm:col-span-6 md:col-span-4 m-4 card-shadow text-center justify-center items-center rounded-3xl hover:scale-105 ease-in-out transition-all duration-300 min-w-[230px] aspect-square">
           <Link
             href="#"
-            className="w-full flex justify-center items-center flex-col">
+            className="w-full h-full flex justify-center items-center flex-col">
             <Image
+              className="object-cover w-[100px] h-[100px]"
               src={placeholderImg}
               alt="product image"
               width={200}
@@ -20,11 +21,12 @@ export default function CardNav() {
             <p>Name</p>
           </Link>
         </div>
-        <div className="flex col-span-4 m-4 card-shadow text-center justify-center aspect-square items-center rounded-3xl hover:scale-105 ease-in-out transition-all duration-300">
+        <div className="flex col-span-12 sm:col-span-6 md:col-span-4 m-4 card-shadow text-center justify-center items-center rounded-3xl hover:scale-105 ease-in-out transition-all duration-300 min-w-[230px] aspect-square">
           <Link
             href="#"
-            className="w-full flex justify-center items-center flex-col">
+            className="w-full h-full flex justify-center items-center flex-col">
             <Image
+              className="object-cover w-[100px] h-[100px]"
               src={placeholderImg}
               alt="product image"
               width={200}
@@ -33,11 +35,12 @@ export default function CardNav() {
             <p>Name</p>
           </Link>
         </div>
-        <div className="flex col-span-4 m-4 card-shadow text-center justify-center aspect-square items-center rounded-3xl hover:scale-105 ease-in-out transition-all duration-300">
+        <div className="flex col-span-12 sm:col-span-6 md:col-span-4 m-4 card-shadow text-center justify-center items-center rounded-3xl hover:scale-105 ease-in-out transition-all duration-300 min-w-[230px] aspect-square">
           <Link
             href="#"
-            className="w-full flex justify-center items-center flex-col">
+            className="w-full h-full flex justify-center items-center flex-col">
             <Image
+              className="object-cover w-[100px] h-[100px]"
               src={placeholderImg}
               alt="product image"
               width={200}
@@ -46,11 +49,12 @@ export default function CardNav() {
             <p>Name</p>
           </Link>
         </div>
-        <div className="flex col-span-4 m-4 card-shadow text-center justify-center aspect-square items-center rounded-3xl hover:scale-105 ease-in-out transition-all duration-300">
+        <div className="flex col-span-12 sm:col-span-6 md:col-span-4 m-4 card-shadow text-center justify-center items-center rounded-3xl hover:scale-105 ease-in-out transition-all duration-300 min-w-[230px] aspect-square">
           <Link
             href="#"
-            className="w-full flex justify-center items-center flex-col">
+            className="w-full h-full flex justify-center items-center flex-col">
             <Image
+              className="object-cover w-[100px] h-[100px]"
               src={placeholderImg}
               alt="product image"
               width={200}
@@ -59,11 +63,12 @@ export default function CardNav() {
             <p>Name</p>
           </Link>
         </div>
-        <div className="flex col-span-4 m-4 card-shadow text-center justify-center aspect-square items-center rounded-3xl hover:scale-105 ease-in-out transition-all duration-300">
+        <div className="flex col-span-12 sm:col-span-6 md:col-span-4 m-4 card-shadow text-center justify-center items-center rounded-3xl hover:scale-105 ease-in-out transition-all duration-300 min-w-[230px] aspect-square">
           <Link
             href="#"
-            className="w-full flex justify-center items-center flex-col">
+            className="w-full h-full flex justify-center items-center flex-col">
             <Image
+              className="object-cover w-[100px] h-[100px]"
               src={placeholderImg}
               alt="product image"
               width={200}
@@ -72,11 +77,12 @@ export default function CardNav() {
             <p>Name</p>
           </Link>
         </div>
-        <div className="flex col-span-4 m-4 card-shadow text-center justify-center aspect-square items-center rounded-3xl hover:scale-105 ease-in-out transition-all duration-300">
+        <div className="flex col-span-12 sm:col-span-6 md:col-span-4 m-4 card-shadow text-center justify-center items-center rounded-3xl hover:scale-105 ease-in-out transition-all duration-300 min-w-[230px] aspect-square">
           <Link
             href="#"
-            className="w-full flex justify-center items-center flex-col">
+            className="w-full h-full flex justify-center items-center flex-col">
             <Image
+              className="object-cover w-[100px] h-[100px]"
               src={placeholderImg}
               alt="product image"
               width={200}
