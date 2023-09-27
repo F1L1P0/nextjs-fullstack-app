@@ -52,7 +52,7 @@ export default function Header() {
             <div className="flex flex-shrink-0 items-center">
               <Image
                 className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                src="/vercel.svg"
                 alt="Your Company"
                 width={30}
                 height={30}

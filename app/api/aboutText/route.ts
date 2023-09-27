@@ -20,7 +20,7 @@ async function dbConn() {
 
 dbConn()
 
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
+export async function GET(req: NextApiRequest, res: NextResponse) {
   try {
     return new Response(JSON.stringify(await dbConn()))
   } catch (err) {
