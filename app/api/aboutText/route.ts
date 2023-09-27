@@ -1,6 +1,5 @@
 import mysql from 'mysql2/promise'
-import { NextApiRequest, NextApiResponse } from 'next'
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
 async function dbConn() {
   const dbconnection = await mysql.createConnection({
@@ -20,7 +19,7 @@ async function dbConn() {
 
 dbConn()
 
-export async function GET(req: NextApiRequest, res: NextResponse) {
+export async function GET(req: NextRequest, res: NextResponse) {
   try {
     return new Response(JSON.stringify(await dbConn()))
   } catch (err) {
