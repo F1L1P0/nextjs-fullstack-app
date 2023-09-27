@@ -2,6 +2,7 @@ import mysql from 'mysql2/promise'
 import { NextRequest, NextResponse } from 'next/server'
 
 async function dbConn() {
+  'use server'
   const dbconnection = await mysql.createConnection({
     host: process.env.DB_HOST,
     database: process.env.DB_DATABASE,
@@ -17,12 +18,12 @@ async function dbConn() {
   return data
 }
 
-dbConn()
-
 export async function GET(req: NextRequest, res: NextResponse) {
   try {
-    return new Response(JSON.stringify(await dbConn()))
+    const data = await dbConn()
+    return new Response(JSON.stringify(data))
   } catch (err) {
     console.log('ERROR APPEARED LOL')
+    return new Response('An error occurred', { status: 500 })
   }
 }

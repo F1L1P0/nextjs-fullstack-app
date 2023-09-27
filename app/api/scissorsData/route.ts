@@ -1,6 +1,6 @@
-import { NextApiRequest, NextApiResponse } from 'next'
+import { NextRequest, NextResponse } from 'next/server'
 
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
+export async function GET(req: NextRequest, res: NextResponse) {
   const data = [
     {
       id: 0,
@@ -38,5 +38,6 @@ export async function GET(req: NextApiRequest, res: NextApiResponse) {
     return new Response(JSON.stringify(data))
   } catch (err) {
     console.log('ERROR APPEARED LOL')
+    return new Response('An error occurred', { status: 500 })
   }
 }
