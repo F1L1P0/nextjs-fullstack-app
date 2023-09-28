@@ -4,10 +4,10 @@ import { NextResponse, NextRequest } from 'next/server'
 
 export async function GET() {
   const client = await clientPromise
-  const collection = client.db('os').collection('titlePage')
+  const collection = client.db('os').collection('scissors')
   try {
-    const aboutText = await collection.find({}).toArray()
-    return NextResponse.json(aboutText, { status: 200 })
+    const data = await collection.find({}).toArray()
+    return NextResponse.json(data, { status: 200 })
   } catch (error) {
     return NextResponse.json(error, { status: 500 })
   } finally {
@@ -17,7 +17,7 @@ export async function GET() {
 
 export async function POST(req: NextRequest) {
   const client = await clientPromise
-  const collection = client.db().collection('titlePage')
+  const collection = client.db().collection('scissors')
   const { text } = await req.json()
 
   try {
@@ -35,7 +35,7 @@ export async function PUT(req: NextRequest) {
   const { newAboutText }: any = await req.json()
 
   const client = await clientPromise
-  const collection = client.db('ostraticky').collection('titlePage')
+  const collection = client.db('ostraticky').collection('scissors')
 
   try {
     await collection.updateOne(
@@ -56,7 +56,7 @@ export async function PUT(req: NextRequest) {
 export async function DELETE(req: NextRequest) {
   const { id } = await req.json()
   const client = await clientPromise
-  const collection = client.db().collection('titlePage')
+  const collection = client.db().collection('scissors')
   try {
     await collection.deleteOne({ _id: new ObjectId(id) })
     return NextResponse.json({ message: 'successfully deleted' })

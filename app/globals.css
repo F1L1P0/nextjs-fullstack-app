@@ -20,6 +20,7 @@ body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-end-rgb));
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .green-btn{

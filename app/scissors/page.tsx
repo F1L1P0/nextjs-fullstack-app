@@ -1,47 +1,38 @@
+'use client'
 import Image from 'next/image'
 import '@/app/globals.css'
 import Link from 'next/link'
 import ServerUploadPage from './components/addFile'
+import { useEffect, useState } from 'react'
 
-async function page() {
-  'use server'
-  const data = [
-    {
-      id: 0,
-      name: 'John Doe',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      image: '/sliderImages/1.jpg',
-    },
-    {
-      id: 1,
-      name: 'Jane Smith',
-      text: 'Sed ac odio vitae urna faucibus commodo. Fusce in ipsum condimentum, dignissim tellus vel, ultrices purus.',
-      image: '/sliderImages/1.jpg',
-    },
-    {
-      id: 2,
-      name: 'Alice Johnson',
-      text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce in ipsum condimentum, dignissim tellus vel, ultrices purus.',
-      image: '/sliderImages/1.jpg',
-    },
-    {
-      id: 3,
-      name: 'Bob Thompson',
-      text: 'Fusce in ipsum condimentum, dignissim tellus vel, ultrices purus.Fusce in ipsum condimentum, dignissim tellus vel, ultrices purus.',
-      image: '/sliderImages/1.jpg',
-    },
-    {
-      id: 4,
-      name: 'Emily Davis',
-      text: 'Vestibulum nec diam vel metus bibendum laoreet et nec elit. Fusce in ipsum condimentum, dignissim tellus vel, ultrices purus.',
-      image: '/sliderImages/1.jpg',
-    },
-  ]
+export default function Page() {
+  const [scissorsData, setScissorsData] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+  const apiUrlEndpoint = 'http://localhost:3000/api/categories/scissors'
+
+  const getPageData = async () => {
+    try {
+      const response = await fetch(apiUrlEndpoint)
+      if (!response.ok) {
+        throw new Error('Failed to fetch data')
+      }
+      const res = await response.json()
+      setScissorsData(res)
+    } catch (error) {
+      console.error(error)
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    getPageData()
+  }, [])
 
   return (
     <div className="container mx-auto my-8">
       <h1 className="text-center text-2xl font-bold">Name of category</h1>
-      {data.map((item) => (
+      {scissorsData.map((item) => (
         <div
           key={item.id}
           className="a border-solid border-green-800 border-2 rounded-xl mb-6 flex">
@@ -74,5 +65,3 @@ async function page() {
     </div>
   )
 }
-
-export default page
