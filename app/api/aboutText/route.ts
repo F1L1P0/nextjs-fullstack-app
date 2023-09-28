@@ -28,11 +28,16 @@ export async function POST(req: NextRequest) {
 }
 
 export async function PUT(req: NextRequest) {
-  const { id, text }: any = await req.json()
+  const { newAboutText }: any = await req.json()
+
   const client = await clientPromise
-  const collection = client.db().collection('titlePage')
+  const collection = client.db('ostraticky').collection('titlePage')
+
   try {
-    await collection.updateOne({ _id: new ObjectId(id) }, { $set: { text } })
+    await collection.updateOne(
+      { index: 0 },
+      { $set: { aboutText: newAboutText } }
+    )
     return NextResponse.json(
       { message: 'Text sucesfully updated' },
       { status: 200 }
@@ -42,7 +47,7 @@ export async function PUT(req: NextRequest) {
   }
 }
 
-export default async function DELETE(req: NextRequest) {
+export async function DELETE(req: NextRequest) {
   const { id } = await req.json()
   const client = await clientPromise
   const collection = client.db().collection('titlePage')
