@@ -10,6 +10,8 @@ export async function GET() {
     return NextResponse.json(aboutText, { status: 200 })
   } catch (error) {
     return NextResponse.json(error, { status: 500 })
+  } finally {
+    await client.close()
   }
 }
 
@@ -24,6 +26,8 @@ export async function POST(req: NextRequest) {
     return new NextResponse(aboutText, { status: 201 })
   } catch (error) {
     return NextResponse.json(error, { status: 500 })
+  } finally {
+    await client.close()
   }
 }
 
@@ -44,6 +48,8 @@ export async function PUT(req: NextRequest) {
     )
   } catch (error) {
     return NextResponse.json(error, { status: 500 })
+  } finally {
+    await client.close()
   }
 }
 
@@ -56,5 +62,7 @@ export async function DELETE(req: NextRequest) {
     return NextResponse.json({ message: 'successfully deleted' })
   } catch (error) {
     return NextResponse.json(error, { status: 500 })
+  } finally {
+    await client.close()
   }
 }
